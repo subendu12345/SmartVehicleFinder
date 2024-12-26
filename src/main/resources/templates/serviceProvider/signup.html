@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <section>
+        <div class="d-flex justify-content-center align-item-center">
+            <p>sign up</p>
+
+        </div>
+        <form th:action="@{/auth/signup}" th:object="${user}" method="post">
+            <div class="container">
+                <div class="row g-2">
+                    <div class="col-sm-6 col-md-6">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" required th:value="${user.name}" class="form-control" id="name">
+                    </div>
+
+                    <div class="col-sm-6 col-md-6">
+                        <label for="address" class="form-label">Address</label>
+                        <textarea name="address" th:value="${user.address}" class="form-control"
+                            id="address"> </textarea>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6">
+                        <label for="pincode" class="form-label">Pincode</label>
+                        <input type="number" required name="pincode" th:value="${user.pincode}" class="form-control"
+                            id="pincode">
+                    </div>
+
+                    <div class="col-sm-6 col-md-6">
+                        <label for="phone" class="form-label">Phone number</label>
+                        <input type="text" required th:value="${user.phone}" name="phone" class="form-control"
+                            id="phone">
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" required th:value="${user.email}" name="email" class="form-control"
+                            id="email">
+                    </div>
+
+                    <div class="col-sm-6 col-md-6">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" required th:value="${user.password}" name="password"
+                            class="form-control" id="password">
+                    </div>
+                </div>
+
+            </div>
+            <div class="container p-3">
+
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </section>
+
+</body>
+
+</html>

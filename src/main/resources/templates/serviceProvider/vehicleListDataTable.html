@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-md-12">
+            <button id="addVehicleButton" style="float: right;" onclick="window.location.href='/user/vehicle/new'" class="btn mb-2 btn-primary">Add Vehicle</button>
+            <h4>Your Vehicle List</h4>
+            <div class="table-responsive">
+
+
+                <table id="mytable" class="table table-bordred table-striped">
+
+                    <thead>
+
+                       <th></th>
+                        <th>Vehicle Name</th>
+                        <th>Vehicle Number</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+
+                        <th>Actions</th>
+                    </thead>
+                    <tbody id="ownerCarListTableBody">
+                        <!-- dynamically render by js -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    This is the modal body content.
+                </div>
+                <div class="modal-footer">
+                    <button id="vehicleCloseModal" onclick="closeModal()" class="btn btn-secondary">Close</button>
+                    <button type="button" class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    function closeModal() {
+        confirm("Are you sure you want to close the modal?");
+       document.getElementById('exampleModal').style.display = 'none';
+    }
+</script>

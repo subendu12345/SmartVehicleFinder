@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<section>
+    <div>
+        <button class="btn btn-secondary m-3" onclick="window.location.href='/service-provider'">Back</button>
+    </div>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h4>Vehicle Registration</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="vehicleRegistrationForm" method="post" th:object="${vehicleWrapper}" th:action="@{/user/vehicle/registration}">
+
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Vehicle Name</label>
+                                <input type="text" class="form-control" th:value="${vehicleWrapper.name}" id="name" name="name" placeholder="Enter Vehicle Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="vehicleNumber" class="form-label">Vehicle Number</label>
+                                <input type="text" class="form-control" th:value="${vehicleWrapper.vehicle_number}" id="vehicle_number" name="vehicle_number" placeholder="Enter Vehicle Number" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="brand" class="form-label">Vehicle Brand</label>
+                                <input type="text" class="form-control" th:value="${vehicleWrapper.brand}" id="brand" name="brand" placeholder="Enter Vehicle Brand" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="model" class="form-label">Vehicle Model</label>
+                                <input type="text" class="form-control" th:value="${vehicleWrapper.model}" id="model" name="model" placeholder="Enter Vehicle Model" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

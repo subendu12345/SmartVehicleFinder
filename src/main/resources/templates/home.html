@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <section>
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="d-flex justify-content-center align-item-center">
+                <form class="form-inline my-2 my-lg-0 align-item-cente">
+                    <input class="form-control pt-1 mr-sm-2" type="search" id="searchable-input"
+                        placeholder="Search Car by pincode" aria-label="Search">
+                </form>
+            </div>
+            <h1>Welcome to Smart Vehicle Finder</h1>
+            <p>Search vehicles by pincode effortlessly!</p>
+
+        </div>
+        <div th:replace="/vehicle/endUserVehicleList.html :: busList('', '')"></div>
+    </section>
+</body>
+
+</html>

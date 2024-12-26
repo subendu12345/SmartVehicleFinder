@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>vehicle type</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <section>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card shadow-lg">
+                        <div class="card-header bg-primary text-white text-center">
+                            <h4>Vehicle Type</h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="vehicleTypeForm" method="post" th:object="${vehicleType}" th:action="@{/admin/newvehicletype}">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Vehicle Type</label>
+                                    <input type="text" class="form-control" th:value="${vehicleType.name}" id="name" name="name" placeholder="Enter Vehicle Type" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
