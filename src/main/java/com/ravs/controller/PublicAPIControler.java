@@ -10,18 +10,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ravs.DTO.VehicleOwnerDTO;
 import com.ravs.repo.VehicleRepo;
+import com.ravs.services.VehicleService;
+import com.ravs.servicesImplementation.VehicleServiceImpl;
 
 @RestController
 @RequestMapping("/public")
 public class PublicAPIControler {
 
     @Autowired
-    private VehicleRepo vehicleRepo;    
+    private VehicleRepo vehicleRepo;  
+    
+    @Autowired 
+    private VehicleService vehicleService;
 
     @GetMapping("/get-vehicles")
     public List<VehicleOwnerDTO> getVehicles(@RequestParam("pincode") String pincode){
         System.out.println("public api called **************************> " + pincode);
-        return vehicleRepo.getVehicleByPincodeLike(pincode);
+        return vehicleService.getVehicleList(pincode);
     }
 
         @GetMapping("/get-default-vehicles")

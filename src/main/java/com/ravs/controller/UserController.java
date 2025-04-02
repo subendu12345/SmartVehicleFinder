@@ -54,7 +54,7 @@ public class UserController {
         newVehicle.setName(vehicleWrapper.getName());
         newVehicle.setPincode(Integer.valueOf(user.getPincode()));
         System.out.println("---> "+newVehicle.toString());
-        vehicleService.saveVehicle(newVehicle);
+        vehicleService.creatVehicle(newVehicle);
 
         return "/vehicle/vehicleRegistration";
        

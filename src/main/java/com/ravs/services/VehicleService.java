@@ -1,21 +1,14 @@
 package com.ravs.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import java.util.List;
 
+import com.ravs.DTO.VehicleOwnerDTO;
 import com.ravs.entities.Vehicle;
-import com.ravs.repo.VehicleRepo;
 
-@Service
-public class VehicleService {
-
-    @Autowired
-    private VehicleRepo vehicleRepo;
-
-
-    public void saveVehicle(Vehicle vehicle) {
-        vehicleRepo.save(vehicle);
-        System.out.println("Vehicle saved");
-    }
-    
+public interface VehicleService {
+    Vehicle creatVehicle(Vehicle vehicle);
+    List<VehicleOwnerDTO> getVehicleList(String pincode);
+    List<Vehicle> getVehicleList(int id);
+    Vehicle updateVehicle(Vehicle vehicle);
+    boolean deleteVehicle(Long id);    
 }
